@@ -19,7 +19,7 @@ for i in range(1, len(sys.argv)):
 		continue
 
 	code = ''
-	with open(sys.argv[i], 'r') as f:
+	with open(sys.argv[i], 'r', encoding='utf-8') as f:
 		code = f.read()
 
 		print('Methodmapizing {}'.format(sys.argv[i]))
@@ -332,5 +332,5 @@ for i in range(1, len(sys.argv)):
 		# _: int retagging
 		#code = re.sub(r"_:([a-zA-Z0-9_]+(\[[a-zA-Z0-9_]+\])*)", r"view_as<int>(\1)", code)
 
-	with open(sys.argv[i] + '.m', 'w') as f:
+	with open(sys.argv[i] + '.m', 'w', encoding='utf-8') as f:
 		f.write(code)
